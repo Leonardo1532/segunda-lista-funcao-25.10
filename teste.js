@@ -28,17 +28,14 @@ que no login caso seja bem sucedido retorna uma mensagem “Login feito com
 sucesso!” e em caso negativo “Nome ou senha incorretos!”
 */
 
+var nome = []
+var senha = []
 
-var numero
-function Valor() {
-    numero = prompt("Insira um número inteiro")
-    if (numero > 0) {
-        console.log(1)
-    } else if (numero < 0) {
-        console.log(-1)
-    } else if (numero == 0) {
-        console.log(0)
-    }
+function Guardar(){
+    nome = prompt("Insira seu nome")
+    senha = prompt("Insira sua senha")
 }
-Valor()
+Guardar()
+
+
 
