@@ -43,17 +43,9 @@ function Valor() {
 }
 Valor()
 
-//desafio 1
 
-var nomes = []
-var senhas = []
-var index = 0
-function Guardar() {
-    nome[index] = prompt("Insira seu nome")
-    senha[index] = prompt("Insira sua senha")
-    index++
-}
-Guardar()
+var continuar = "s"
+
 
 //desafio 2
 
@@ -61,16 +53,26 @@ var opcao
 function Solicitar() {
     opcao = prompt("Insira para: cadastrar(1) fazerlogin(2) excluir um cadastro(3) encerrar o programa(4)")
 }
-Solicitar()
+
+//desafio 1
+
+var nomes = []
+var senhas = []
+var index = 0
+function Guardar() {
+    nomes[index] = prompt("Insira seu nome")
+    senhas[index] = prompt("Insira sua senha")
+    index++
+}
+
+
 
 //desafio 3
 
-var nome = prompt("Insira um nome para login")
-var senha = prompt("Insira uma senha para login")
+
 
 function Login(nome, senha) {
     for (var index2 = 0; index2 <= index; index2++) {
-
         if (nome == nomes[index2] && senha == senhas[index2]) {
             return true
         } else {
@@ -86,7 +88,7 @@ var suporteNome = []
 var suporteSenha = []
 var indexSup = 0
 
-function exclusãoDeCadastro(nome) {
+function ExclusãoDeCadastro(nome) {
 
     for (var index3 = 0; index3 <= index; index3++) {
 
@@ -113,5 +115,33 @@ function exclusãoDeCadastro(nome) {
     senhas = suporteSenha
 }
 
+
+
 //desafio 5
 
+while (continuar == "s") {
+    Solicitar()
+
+
+    if (opcao == 1) {
+         Guardar()
+    } else if (opcao == 2) {
+        var nome = prompt("Insira um nome para login")
+        var senha = prompt("Insira uma senha para login")
+        var login = Login(nome, senha)
+        if(login == true){
+            console.log("Login feito com sucesso")
+        }else{
+            console.log("Nome ou senha incorreto")
+        }
+    } else if (opcao == 3) {
+        var nome = prompt("Insira um nome para excluir o cadastro")
+         ExclusãoDeCadastro(nome)
+    } else if (opcao == 4) {
+        continuar = "n"
+    }
+
+    if(continuar == "s"){
+        continuar = prompt("Deseja continuar s ou n")
+    }
+}
