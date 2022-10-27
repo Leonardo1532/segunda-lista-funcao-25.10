@@ -70,18 +70,48 @@ var senha = prompt("Insira uma senha para login")
 
 function Login(nome, senha) {
     for (var index2 = 0; index2 <= index; index2++) {
-        
-        if(nome == nomes[index2] && senha == senhas[index2]){
-           return true
-        }else{
-           return false
+
+        if (nome == nomes[index2] && senha == senhas[index2]) {
+            return true
+        } else {
+            return false
         }
     }
 }
 
 //desafio 4
 
+var nome2
+var suporteNome = []
+var suporteSenha = []
+var indexSup = 0
 
+function exclusãoDeCadastro(nome) {
 
+    for (var index3 = 0; index3 <= index; index3++) {
 
+        if (nome == nomes[index3]) {
+
+            nomes[index3] = 0
+            senhas[index3] = 0
+
+        }
+    }
+
+    for (var index4 = 0; index4 <= index; index4++) {
+
+        if (nomes[index4] != 0 && senhas[index4] != 0) {
+
+            suporteNome[indexSup] = nomes[index4]
+            suporteSenha[indexSup] = senhas[index4]
+
+            indexSup++
+
+        }
+    }
+    nomes = suporteNome
+    senhas = suporteSenha
+}
+
+//desafio 5
 
